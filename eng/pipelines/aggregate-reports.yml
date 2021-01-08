@@ -22,6 +22,7 @@ jobs:
         toolMajorVersion: V2
         outputFormat: csv
         triage: true
+        suppressionsFile: eng/CredScanSuppression.json
     - task: ms-codeanalysis.vss-microsoft-security-code-analysis-devops.build-task-publishsecurityanalysislogs.PublishSecurityAnalysisLogs@2
       displayName: 'Publish Security Analysis Logs'
       inputs:
