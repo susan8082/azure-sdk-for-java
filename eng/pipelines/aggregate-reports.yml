@@ -20,9 +20,13 @@ jobs:
       displayName: 'Run CredScan'
       inputs:
         toolMajorVersion: V2
-        outputFormat: csv
+        outputFormat: sarif
         triage: true
         suppressionsFile: eng/CredScanSuppression.json
+    - task: securedevelopmentteam.vss-secure-development-tools.build-task-report.SdtReport@1
+      displayName: 'Create Security Analysis Report'
+      inputs:
+        CredScan: true
     - task: ms-codeanalysis.vss-microsoft-security-code-analysis-devops.build-task-publishsecurityanalysislogs.PublishSecurityAnalysisLogs@2
       displayName: 'Publish Security Analysis Logs'
       inputs:
