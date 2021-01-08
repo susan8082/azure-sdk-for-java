@@ -20,9 +20,20 @@ jobs:
       displayName: 'Run CredScan'
       inputs:
         toolMajorVersion: V2
-        outputFormat: csv
-        debugMode: false
-      timeoutInMinutes: 360
+        outputFormat: sarif
+        triage: true
+    - task: ms-codeanalysis.vss-microsoft-security-code-analysis-devops.build-task-publishsecurityanalysislogs.PublishSecurityAnalysisLogs@2
+      displayName: 'Publish Security Analysis Logs'
+      inputs:
+        AllTools: false
+        AntiMalware: false
+        BinSkim: false
+        MSRD: false
+        TSLint: false
+    - task: securedevelopmentteam.vss-secure-development-tools.build-task-postanalysis.PostAnalysis@1
+      displayName: 'Post Analysis'
+      inputs:
+        CredScan: true
     - template: ../common/pipelines/templates/steps/verify-links.yml
       parameters:
         Directory: ""
