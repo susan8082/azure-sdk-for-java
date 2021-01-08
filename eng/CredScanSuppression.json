@@ -22,7 +22,7 @@
         "_justification": "Password is fake."
     },
     {
-        "file": "file:///D:/a/1/s/sdk/cosmos/azure-cosmos/src/test/resources/client.jks", 
+        "file": "sdk\\cosmos\\azure-cosmos\\src\\test\\resources\\client.jks", 
         "_justification": "Additional CredScan searcher specific to my team"
     },
     {
