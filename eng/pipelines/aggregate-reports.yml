@@ -14,7 +14,7 @@ jobs:
     variables:
       - template: templates/variables/globals.yml
     pool:
-      vmImage: 'ubuntu-18.04'
+      vmImage: 'windows-2019'
     steps:
     - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
       displayName: 'Run CredScan'
