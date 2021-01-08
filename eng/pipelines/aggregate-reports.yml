@@ -20,7 +20,7 @@ jobs:
       displayName: 'Run CredScan'
       inputs:
         toolMajorVersion: V2
-        outputFormat: sarif
+        outputFormat: csv
         triage: true
     - task: ms-codeanalysis.vss-microsoft-security-code-analysis-devops.build-task-publishsecurityanalysislogs.PublishSecurityAnalysisLogs@2
       displayName: 'Publish Security Analysis Logs'
