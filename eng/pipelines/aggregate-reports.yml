@@ -20,7 +20,7 @@ jobs:
       displayName: 'Run CredScan'
       inputs:
         toolMajorVersion: V2
-        outputFormat: sarif
+        outputFormat: csv
         triage: true
         suppressionsFile: eng/CredScanSuppression.json
     - task: securedevelopmentteam.vss-secure-development-tools.build-task-report.SdtReport@1
