@@ -16,10 +16,6 @@ jobs:
     pool:
       vmImage: 'windows-2019'
     steps:
-    - template: ../common/pipelines/templates/steps/verify-links.yml
-      parameters:
-        Directory: ""
-        CheckLinkGuidance: $true
     - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@3
       displayName: 'Run CredScan'
       inputs:
